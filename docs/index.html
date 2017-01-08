@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>はなさんぽ</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.min.js"></script>
+    <script>
+    function changeBtnOK(frm) {
+	console.log('changeBtnOK');
+       	if (frm.value != "" && $('#exebtn').hasClass('disabled')) {
+		$('#exebtn').removeClass('disabled');
+	} else {
+		$('#exebtn').addClass('disabled');
+	}
+    }
+    </script>
+  </head>
+  <body>
+    <script>
+	$('#ex1').slider({
+		formatter: function(value) {
+			return 'Current value: ' + value;
+		}
+	});
+    </script>
+    <h1>はなさんぽ</h1>
+  <form name="frm" action="map.html" method="get">
+<select name="sanpoTime" class="form-control" onchange="changeBtnOK(this)">
+  <option value="">散歩時間を選んでください…</option>
+  <option value="20">20分</option>
+  <option value="30">30分</option>
+  <option value="40">40分</option>
+  <option value="50">50分</option>
+  <option value="60">60分</option>
+</select>
+　　<button id="exebtn" class="btn btn-success btn-block disabled" onclick="frm.submit()"><i class="glyphicon glyphicon-ok-circle"></i> さんぽする </button>
+  </form>
+<br>
+
+
+
+<!----
+<a class="btn btn-default" href="#" role="button">Link</a>
+<button class="btn btn-default" type="submit">Button</button>
+<input class="btn btn-default" type="button" value="Input">
+<input class="btn btn-default" type="submit" value="Submit">
+<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+<input id="volume" type="text" data-slider-id="volumeSlider" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50" data-slider-tooltip="hide" />
+-->
+
+  </body>
+</html>

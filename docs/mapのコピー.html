@@ -41,6 +41,7 @@ function initMap() {
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			zoom: 14
         });
+        console.log("center:"+center);
         // 現在位置マーカーの追加
         marker = new google.maps.Marker({
             position: center,
@@ -54,11 +55,11 @@ function initMap() {
 		　suppressMarkers: true
  	 	});
  	 	//マーカー出力
-  		setMarkers('内科',map);
+  		//setMarkers('内科',map);
     }, function() {
         alert('位置情報取得に失敗しました');
     });
-  
+
 }
 
 var arr = [];
@@ -394,13 +395,13 @@ function toRender(result){
     directionsDisplay.setMap(map); //マップに描画
 }
 //移動距離を計算
-function getDistanceKm(legs) { 
-	var journey = 0; 
-    for (var i in legs) { 
-        journey += legs[i].distance.value; 
-    } 
-    return journey / 1000; 
-} 
+function getDistanceKm(legs) {
+	var journey = 0;
+    for (var i in legs) {
+        journey += legs[i].distance.value;
+    }
+    return journey / 1000;
+}
 //ボタンの色変え
 function changeButton(org) {
   var frm = $('span');
