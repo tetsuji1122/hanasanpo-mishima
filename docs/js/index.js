@@ -300,7 +300,7 @@ function initCenterMarker() {
   centerInfoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
     content: '好きな場所にドラッグ&ドロップしてリルートしてね' // 吹き出しに表示する内容
   });
-  centerMaker.addListener('dragstart', function(ev) { // マーカーをクリックしたとき
+  centerMaker.addListener('click', function(ev) { // マーカーをクリックしたとき
     centerInfoWindow.open(map, centerMaker); // 吹き出しの表示
   });
   centerMaker.addListener('dragend', function(ev) { // マーカーをクリックしたとき
