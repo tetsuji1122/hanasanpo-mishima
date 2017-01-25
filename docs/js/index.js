@@ -42,6 +42,7 @@ var sanpoTime = 0;
 
 //Google Mapの callback関数
 function initMap() {
+    $('#loading').show();
     //windowサイズに地図表示を合わせる
     console.log("window:height="+$(window).height());
     $('#map').height($(window).height()-98);
@@ -156,6 +157,7 @@ function errorHandler(XMLHttpRequest, textStatus, errorThrown)
     console.log(XMLHttpRequest);
     console.log(textStatus);
     console.log(errorThrown);
+    $('#loading').hide();
 }
 
 //散歩ルートを表示する
@@ -179,6 +181,8 @@ function routeMap() {
   viewMap(sampoPoints);
   //散歩ルートを地図に描画
   getSampoRoute(center, center, sampoPoints);
+  //ロード完了
+  $('#loading').hide();
 }
 
 //散歩地点を取得する
